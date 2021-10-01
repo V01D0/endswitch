@@ -1,4 +1,4 @@
-# Endswitch - A collaborative effort to develop an online "Dead man's switch"
+# Endswitch - A collaborative effort to develop an digital "Dead man's switch"
 
 ## Goals
 - Develop a notification system to verify the existance of user
