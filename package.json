@@ -1,6 +1,31 @@
 {
+  "name": "endswitch",
+  "version": "1.0.0",
+  "description": "## Goals",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/V01D0/endswitch.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/V01D0/endswitch/issues"
+  },
+  "homepage": "https://github.com/V01D0/endswitch#readme",
   "dependencies": {
-    "nodemailer": "^6.6.5",
-    "pg": "^8.7.1"
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.2",
+    "nodemon": "^2.0.13",
+    "prettier": "^2.4.1"
   }
 }

@@ -1,11 +1,19 @@
-const express = require('express');
+import express from 'express';
 
-const app = express();
+import loaders from './loaders/index.js';
 
-app.get('/', (req, res) => {
-  res.send('Hello!');
-});
+async function startServer() {
+  const app = express();
 
-app.listen(3000, () => {
-  console.log('Server began!');
-});
+  await loaders(app);
+
+  app.listen(1000, (err) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log(`Your server is ready !`);
+  });
+}
+
+startServer();
