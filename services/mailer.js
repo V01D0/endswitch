@@ -11,8 +11,7 @@ export default class MailerService {
       sgMail
         .send(data)
         .then((response) => {
-          console.log(response[0].statusCode);
-          console.log(response[0].headers);
+          console.log(`${data['to']} : ${response[0].statusCode}`);
         })
         .catch((error) => {
           console.error(error);
