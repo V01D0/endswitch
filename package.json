@@ -19,10 +19,13 @@
   },
   "homepage": "https://github.com/V01D0/endswitch#readme",
   "dependencies": {
+    "@ladjs/graceful": "^1.0.5",
     "@sendgrid/mail": "^7.4.7",
+    "bree": "^6.3.1",
     "celebrate": "^15.0.0",
     "cookie-parser": "^1.4.5",
     "csurf": "^1.11.0",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "joi": "^17.4.2",
     "ms": "^2.1.3"
