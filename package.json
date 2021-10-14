@@ -19,7 +19,12 @@
   },
   "homepage": "https://github.com/V01D0/endswitch#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "@sendgrid/mail": "^7.4.7",
+    "celebrate": "^15.0.0",
+    "cookie-parser": "^1.4.5",
+    "csurf": "^1.11.0",
+    "express": "^4.17.1",
+    "joi": "^17.4.2"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
