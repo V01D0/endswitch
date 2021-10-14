@@ -15,3 +15,5 @@ router.use(csurf({ cookie: true }));
 router.post('/', (req, res) => {
   res.send('Testing!');
 });
+
+export default router;
