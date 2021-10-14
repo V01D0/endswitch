@@ -11,8 +11,11 @@ const bree = new Bree({
     'verify',
     {
       name: 'verify-main',
-      interval: 'every five days',
+      interval: 'every fourteen days',
       path: path.join(__dirname, './verify.js'),
+    },
+    {
+      name: 'mailer',
     },
   ],
 });
