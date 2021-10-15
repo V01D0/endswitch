@@ -3,7 +3,7 @@ import verifyRoute from './verify.js';
 
 export function init(app) {
   app.get('/', function (req, res) {
-    res.redirect('/home');
+    res.render('home');
   });
 
   app.use('/verify', verifyRoute);
