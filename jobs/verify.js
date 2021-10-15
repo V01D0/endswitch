@@ -5,8 +5,7 @@ const mailerInstance = new MailerService();
 const verifyInstance = new VerifyService();
 try {
   if (verifyInstance.verifySwitch()) {
-    // await mailerInstance.endSwitch();
-    console.log('act');
+    await mailerInstance.endSwitch();
   } else {
     await verifyInstance.initiateSwitch();
   }
