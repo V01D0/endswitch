@@ -3,6 +3,7 @@ import fs from 'fs';
 import { nanoid } from 'nanoid';
 import bcrypt from 'bcryptjs';
 import config from '../config/index.js';
+import moment from 'moment';
 export default class VerifyService {
   constructor() {
     this.require = createRequire(import.meta.url);
@@ -18,6 +19,10 @@ export default class VerifyService {
     }
   }
 
+  isEndswitchActivated() {
+    return this.data.endswitch;
+  }
+
   getToken() {
     return this.data.token;
   }
@@ -30,15 +35,22 @@ export default class VerifyService {
   }
 
   async verifyPassword(password) {
-    console.log(config.password);
-    bcrypt.compare(password, config.password, function (err, res) {
-      return res;
-    });
+    return await bcrypt.compare(password, config.password);
   }
 
   async initiateSwitch() {
     this.data.activate = true;
     this.data.token = nanoid();
+    fs.writeFile(this.pathData, JSON.stringify(this.data, null, 2), (err) => {
+      if (err) {
+        throw new Error('Could not save!');
+      }
+    });
+    return this.data.token;
+  }
+
+  async activateSwitch() {
+    this.data.endswitch = true;
     fs.writeFile(this.pathData, JSON.stringify(this.data, null, 2), (err) => {
       if (err) {
         throw new Error('Could not save!');
@@ -54,5 +66,12 @@ export default class VerifyService {
         throw new Error('Could not save!');
       }
     });
+    return this.data.last_updated;
+  }
+  async calculateDate(startDate) {
+    let end = moment.unix(Date.now());
+    let start = moment.unix(startDate);
+    let diff = Math.ceil(moment.duration(end.diff(start)).asDays());
+    return diff;
   }
 }
