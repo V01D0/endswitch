@@ -21,12 +21,22 @@ router.get(
     let verifyInstance = new verifyController();
     if (Object.keys(req.query).length > 0) {
       if (verifyInstance.getToken() === req.query.token) {
-        await verifyInstance.updateTime();
+        let time = await verifyInstance.updateTime();
+        let days = await verifyInstance.calculateDate(time);
+
         res.status(200);
-        res.render('success', { csrfToken: req.csrfToken(), error: false });
+        res.render('success', {
+          csrfToken: req.csrfToken(),
+          error: false,
+          days: 14 - days,
+        });
       } else {
         res.status(403);
-        res.render('success', { csrfToken: req.csrfToken(), error: true });
+        res.render('success', {
+          csrfToken: req.csrfToken(),
+          error: true,
+          days: 0,
+        });
       }
     } else {
       res.status(200);
@@ -50,13 +60,23 @@ router.post(
   async (req, res) => {
     let verifyInstance = new verifyController();
     if (Object.keys(req.body).length > 0 && req.body.pass) {
-      if (console.log(req.body.pass)) {
-        await verifyInstance.updateTime();
+      if (await verifyInstance.verifyPassword(req.body.pass)) {
+        let time = await verifyInstance.updateTime();
+        let days = await verifyInstance.calculateDate(time);
+        console.log(days);
         res.status(200);
-        res.render('success', { csrfToken: req.csrfToken(), error: false });
+        res.render('success', {
+          csrfToken: req.csrfToken(),
+          error: false,
+          days: 14 - days,
+        });
       } else {
         res.status(403);
-        res.render('success', { csrfToken: req.csrfToken(), error: true });
+        res.render('success', {
+          csrfToken: req.csrfToken(),
+          error: true,
+          days: 0,
+        });
       }
     } else {
       res.status(403);
