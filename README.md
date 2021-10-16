@@ -2,11 +2,11 @@
 
 ## Goals
 
-[-] Develop a notification system to verify the existence of user
-[-] Setup an auto mailing to send emails / products
-[=] Make it completely self-hostable
-[-] Auto-terminate after sending the mails
-[ ] Make a dockerfile
+- [X] Develop a notification system to verify the existence of user
+- [X] Setup an auto mailing to send emails / products
+- [X] Make it completely self-hostable
+- [X] Auto-terminate after sending the mails
+- [ ] Make a dockerfile
 
 ## Technologies used
 
