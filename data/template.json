@@ -1,13 +1,13 @@
 {
   "users": [
     {
-      "to": "rijuthm@gmail.com",
+      "to": "fakemail@fakedomain.com",
       "subject": "Test email",
       "text": "Hey man",
       "html": "<h1>HIIIIII</h1>"
     },
     {
-      "to": "rijuthmenon2013@gmail.com",
+      "to": "fakemail@fakedomain.com",
       "subject": "Test email",
       "text": "Hey man",
       "html": "<h1>HIIIIII</h1>"
