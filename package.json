@@ -1,7 +1,7 @@
 {
   "name": "endswitch",
   "version": "1.0.0",
-  "description": "## Goals",
+  "description": "A self-hostable dead man's switch that will trigger mails after your death!",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/V01D0/endswitch.git"
+    "url": "git+https://github.com/MarkisDev/endswitch.git"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/V01D0/endswitch/issues"
+    "url": "https://github.com/MarkisDev/endswitch/issues"
   },
-  "homepage": "https://github.com/V01D0/endswitch#readme",
+  "homepage": "https://github.com/MarkisDev/endswitch#readme",
   "dependencies": {
     "@ladjs/graceful": "^1.0.5",
     "@sendgrid/mail": "^7.4.7",
