@@ -6,6 +6,7 @@
 - [X] Setup an auto mailing to send emails / products
 - [X] Make it completely self-hostable
 - [X] Auto-terminate after sending the mails
+- [ ] Migrate to a p2p db like Gun
 - [ ] Make a dockerfile
 
 ## Technologies used
