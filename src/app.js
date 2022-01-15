@@ -1,9 +1,31 @@
 const path = require("path");
 const express = require("express");
+const bodyParser = require("body-parser");
 const hbs = require("hbs");
+const session = require("express-session");
 
 // Create express app
 const app = express();
+
+const hour = 3600000;
+
+// Express session stuff
+const sess = {
+  secret: "process.env.SECRET",
+  cookie: {
+    expiry: new Date(Date.now() + hour),
+    maxAge: hour,
+  },
+  resave: false,
+  saveUninitialized: true,
+};
+
+if (app.get("env") === "production") {
+  app.set("trust proxy", 1);
+  sess.cookie.secure = true;
+}
+
+app.use(session(sess));
 
 // Set public, views path
 const publicDir = path.join(__dirname, "../public");
@@ -16,6 +38,17 @@ app.set("view engine", "hbs");
 // Point express to viewsDir
 app.set("views", viewsDir);
 
+// Allow handlebars to see session variables
+app.use(function (req, res, next) {
+  res.locals.session = req.session;
+  next();
+});
+
+// Set express to use JSON parser and URL-Encoded parser
+// Leaving JSON bit IF I plan on doing API support
+// app.use(bodyParser.json());
+const urlEncodedParser = bodyParser.urlencoded({ extended: false });
+
 // Register partials with hbs
 hbs.registerPartials(partialsDir);
 
@@ -27,4 +60,4 @@ app.listen(3000, () => {
 });
 
 // All routes here
-require("./routes")(app);
+require("./routes")(app, urlEncodedParser, session);
