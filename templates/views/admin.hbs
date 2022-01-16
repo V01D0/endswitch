@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{{>header}}
+{{#unless session.userid}}
+<h1 class="text u-text-center">No trespassers!</h1>
+<div class="container u-text-center">
+	<form action="" method="post">
+		<label class="form-block"  for="username">Enter your username</label>
+		<input class="form-inline" type="text" id="username" name="usr" required>
+		<label class="form-block" for="password">Enter your password</label>
+		<input class="form-inline" type="password" id="password" name="pwd" required>
+		<button type="submit" class="form-block btn btn-green">Login</button>
+		{{#if session.err}}
+			<br>
+			<p>{{session.err}}</p>
+		{{/if}}
+	</form>
+</div>
+{{/unless}}
+{{#if session.userid}}
+	<h1 class="text u-text-center">Admin</h1>
+	
+{{/if}}
