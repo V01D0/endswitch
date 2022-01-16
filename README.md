@@ -3,8 +3,9 @@
 ## Goals
 
 - Develop a notification system to verify the existence of user
-- Setup an auto mailing / auto shipping script to send emails / products
-- Make it completely self-hostable (maybe with a Docker file)
+- Setup an auto mailing script to send emails
+- Customize to make the backend more versatile
+- Make it completely self-hostable
 
 ## Technologies to be used
 
