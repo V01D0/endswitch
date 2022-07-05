@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{{>header}}
+{{#unless msg}}
+{{!-- <h1 class="text u-text-center"></h1> --}}
+<div class="container u-text-center">
+	<form action="" method="post">
+		<label class="form-block" for="password">Enter the ID</label>
+		<input class="form-inline" type="password" id="password" name="pwd" required>
+		<button type="submit" class="form-block btn btn-green">Verify</button>
+		{{#if session.err}}
+			<br>
+			<p>{{session.err}}</p>
+		{{/if}}
+	</form>
+</div>
+{{/unless}}
+{{#if msg}}
+	<h1 class="text u-text-center">{{msg}}</h1>
+{{/if}}
+{{#if verified}}
+	<h1 class="text u-text-center">Verified!</h1>
+{{/if}}
+{{>footer}}
