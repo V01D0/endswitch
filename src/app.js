@@ -60,4 +60,7 @@ app.listen(3000, () => {
 });
 
 // All routes here
-require("./routes")(app, urlEncodedParser, session);
+require("./routes/admin")(app, urlEncodedParser);
+require("./routes/home")(app);
+require("./routes/verify")(app, urlEncodedParser);
+// require("./routes")(app, urlEncodedParser, session);
