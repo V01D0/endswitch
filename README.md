@@ -12,3 +12,7 @@
 - NodeJS
 - HTML
 - CSS
+
+## In cron
+
+- `0 0 */3 * * node path/to/endswitch/src/services/send_mail.js`
