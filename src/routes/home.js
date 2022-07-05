@@ -5,10 +5,10 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/logout", (req, response) => {
+  app.get("/logout", (req, res) => {
     if (req.session.userid) {
       req.session.destroy();
     }
-    response.redirect("/");
+    res.redirect("/");
   });
 };

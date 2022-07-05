@@ -1,3 +1,6 @@
+const admin = require("../services/admin");
+// const bcrypt = require("bcryptjs");
+
 module.exports = function (app, parser) {
   app.get("/admin", (req, res) => {
     const session = req.session;
